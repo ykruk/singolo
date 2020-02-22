@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Lato;
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
