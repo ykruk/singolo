@@ -25,6 +25,9 @@
   width: 125px;
   font-family: Lato, Arial, Helvetica, sans-serif;
 }
+.logo a, .menu a {
+  text-decoration: none;
+}
 .logo-white {
   font-size: 25px;
   color: #ffffff;
@@ -40,15 +43,26 @@
   width: 372px;
   justify-content: space-between;
   font-size: 12px;
-  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -0.2px;
+}
+.menu-item a {
+  color: #ffffff;
 }
 .menu-item:first-child {
   list-style-type: none;
 }
-.menu .active {
+.menu .active a {
   color: #f06c64;
+}
+.menu-item a:hover {
+  border-bottom: 1px solid #ffffff ;
+}
+.menu .active a:hover {
+  border-bottom: 1px solid #f06c64 ;
+}
+.heading {
+  display: none;
 }
 .slider {
   position: relative;
