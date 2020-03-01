@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singolo - part 2</title>
+  <link rel="stylesheet" href="singolo2.css">
+  
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+      <div class="portfolio">
+        <div class="portfolio-title">Portfolio</div>
+        <div class="portfolio-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
+        <ul class="portfolio-filter">
+          <li class="portfolio-filter-item active" onclick="filterSelection('all')">All</li>
+          <li class="portfolio-filter-item" onclick="filterSelection('web')">Web Design</li>
+          <li class="portfolio-filter-item" onclick="filterSelection('graphic')">Graphic Design</li>
+          <li class="portfolio-filter-item" onclick="filterSelection('art')">Artwork</li>
+        </ul>
+        <div class="portfolio-photos-block">
+          <img src="assets/images/portfolio/image1.png" class="portfolio-photo web" alt="image1">
+          <img src="assets/images/portfolio/image2.png" class="portfolio-photo graphic art" alt="image2">
+          <img src="assets/images/portfolio/image3.png" class="portfolio-photo web" alt="image3">
+          <img src="assets/images/portfolio/image4.png" class="portfolio-photo art" alt="image4">
+          <img src="assets/images/portfolio/image5.png" class="portfolio-photo art web" alt="image5">
+          <img src="assets/images/portfolio/image6.png" class="portfolio-photo graphic" alt="image6">
+          <img src="assets/images/portfolio/image7.png" class="portfolio-photo web" alt="image7">
+          <img src="assets/images/portfolio/image8.png" class="portfolio-photo art" alt="image8">
+          <img src="assets/images/portfolio/image9.png" class="portfolio-photo web graphic" alt="image9">
+          <img src="assets/images/portfolio/image10.png" class="portfolio-photo web art graphic" alt="image10">
+          <img src="assets/images/portfolio/image11.png" class="portfolio-photo graphic art" alt="image11">
+          <img src="assets/images/portfolio/image12.png" class="portfolio-photo web art" alt="image12">
+          <img src="assets/images/portfolio/image12.png" class="portfolio-photo web" alt="image13">
+        </div>
+      </div>
+      
+    </main>
+  </div>
+
+  <script>
+    filterSelection("all");
+
+    function filterSelection(c) {
+      let x = document.getElementsByClassName('portfolio-photo');
+      if (c === 'all') c = '';
+      for (let i = 0; i < x.length; i++) {
+        x[i].classList.remove('show');
+        if (x[i].className.indexOf(c) > -1) x[i].classList.add('show');
+      }
+    }
+
+    let filter = document.querySelector('.portfolio-filter');
+    let buttons = filter.querySelectorAll('.portfolio-filter-item');
+    buttons.forEach(element => {
+      element.addEventListener('click', function() {
+        let current = document.querySelector('.active');
+        current.classList.remove('active');
+        this.classList.add('active');
+      });
+    });
+  </script>
+  
+</body>
+</html>
