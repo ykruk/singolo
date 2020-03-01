@@ -140,4 +140,9 @@
 }
 .about .about-team-item .about-team-icon {
   margin-right: 5px;
+  border-radius: 50%;
+}
+.about .about-team-item .about-team-icon:hover {
+  cursor: pointer;
+  background-color: #2d303a;
 }
