@@ -125,4 +125,27 @@
   font-size: 12px;
   color: inherit;
 }
-
+.footer {
+  position: relative;
+  width: 940px;
+  padding: 22px 40px 54px;
+  background-color: #2d303a;
+  color: #666d89;
+}
+.footer .footer-copy {
+  float: left;
+  font-family: Lato-Regular;
+  font-size: 12px;
+  padding-top: 8px;
+}
+.footer .footer-icons {
+  float: right;
+}
+.footer .footer-icon {
+  margin-left: 4px;
+  border-radius: 50%;
+}
+.footer .footer-icon:hover {
+  cursor: pointer;
+  background-color: #f48c8f;
+}
