@@ -17,13 +17,17 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: Lato;
 }
 .wrapper {
+  position: relative;
   width: 1020px;
   margin: 0 auto;
 }
 .header {
+  position: sticky;
+  top: 0px;
+  z-index: 5;
   display: inline-flex;
   justify-content: space-between;
   width: 92.16%;
@@ -58,23 +62,20 @@
   text-transform: uppercase;
   letter-spacing: -0.2px;
 }
-.menu-item a {
+.menu-item {
   color: #ffffff;
 }
-.menu-item:first-child {
+.menu li:first-child {
   list-style-type: none;
 }
-.menu .active a {
+.menu .active {
   color: #f06c64;
 }
-.menu-item a:hover {
+.menu-item:hover {
   border-bottom: 1px solid #ffffff ;
 }
-.menu .active a:hover {
+.menu .active:hover {
   border-bottom: 1px solid #f06c64 ;
-}
-.heading {
-  display: none;
 }
 .slider {
   position: relative;
@@ -153,6 +154,9 @@
   z-index: 2;
   background-image: url(assets/images/phone-h-screen.png);
   background-position: 50% 30.3%;
+}
+.slider-image-phone .screenOff {
+  display: none;
 }
 .services {
   width: 100%;
@@ -257,7 +261,7 @@
   color: #c5c5c5;
   border-color: #c5c5c5;
 }
-.portfolio .portfolio-filter .active {
+.portfolio .portfolio-filter .activeFilter {
   color: #c5c5c5;
   border-color: #c5c5c5;
 }
@@ -271,9 +275,13 @@
   width: 220px;
   margin-right: 20px;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 .portfolio-photos-block .show {
   display: block;
+}
+.portfolio-photos-block .border {
+  outline: 5px dashed #F06C64;
 }
 .portfolio .portfolio-photo:nth-child(n+13) {
   display: none;
@@ -375,7 +383,8 @@
   margin-bottom: 16px;
   font-size: 12px;
 }
-.quote .quote-form input::placeholder {
+.quote .quote-form input::placeholder,
+.quote .quote-form textarea::placeholder {
   color: #f48c8f;
 }
 .quote .quote-form textarea {
@@ -441,6 +450,41 @@
   font-family: Lato-Regular;
   font-size: 12px;
   color: inherit;
+}
+#form-modal {
+  position: fixed;
+  top: 150px;
+  left: 33%;
+  width: 33%;
+  padding: 40px 40px;
+  background-color: #f06c64;
+  color: #f0d8d9;
+  border: 2px solid #ea676b;
+  border-radius: 10px;
+  z-index: 15;
+}
+#form-modal h3 {
+  padding-bottom: 15px;
+}
+#form-modal-button {
+  margin-top: 20px;
+  border: 1px solid #d6564f;
+  background-color: #f0d8d9;
+  border-radius: 5px;
+  padding: 5px;
+}
+#form-modal-button:hover {
+  cursor: pointer;
+}
+#modal-background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%; 
+  height: 100%;
+  background-color: #f0d8d9;
+  opacity: 0.8;
+  z-index: 10;
 }
 .footer {
   position: relative;

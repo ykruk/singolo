@@ -8,18 +8,17 @@
 </head>
 <body>
   <div class="wrapper">
-    <header class="header">
-      <div class="logo">
+    <header class="header" id="home">
+      <h1 class="logo">
         <a href="#"><p class="logo-white">Singolo<span class="logo-red">*</span></p></a>
-      </div>
+      </h1>
       <ul class="menu">
-        <li class="menu-item active"><a href="#">Home</a></li>
-        <li class="menu-item"><a href="#">Services</a></li>
-        <li class="menu-item"><a href="#">Portfolio</a></li>
-        <li class="menu-item"><a href="#">About</a></li>
-        <li class="menu-item"><a href="#">Contact</a></li>
+        <li><a href="#home" class="menu-item active">Home</a></li>
+        <li><a href="#services" class="menu-item">Services</a></li>
+        <li><a href="#portfolio" class="menu-item">Portfolio</a></li>
+        <li><a href="#about" class="menu-item">About</a></li>
+        <li><a href="#contact" class="menu-item">Contact</a></li>
       </ul>
-      <h1 class="heading">Singolo - part 1</h1>
     </header>
 
     <main>
@@ -38,7 +37,7 @@
         <div class="slider-arrow-right slider-arrow"></div>
       </div>
 
-      <div class="services">
+      <div class="services" id="services">
         <div class="services-title">Our Services</div>
         <div class="services-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
         <div class="services-items">
@@ -72,14 +71,14 @@
 
       </div>
 
-      <div class="portfolio">
+      <div class="portfolio" id="portfolio">
         <div class="portfolio-title">Portfolio</div>
         <div class="portfolio-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
         <ul class="portfolio-filter">
-          <li class="portfolio-filter-item active" onclick="filterSelection('all')">All</li>
-          <li class="portfolio-filter-item" onclick="filterSelection('web')">Web Design</li>
-          <li class="portfolio-filter-item" onclick="filterSelection('graphic')">Graphic Design</li>
-          <li class="portfolio-filter-item" onclick="filterSelection('art')">Artwork</li>
+          <li class="portfolio-filter-item activeFilter" id="all">All</li>
+          <li class="portfolio-filter-item" id="web">Web Design</li>
+          <li class="portfolio-filter-item" id="graphic">Graphic Design</li>
+          <li class="portfolio-filter-item" id="art">Artwork</li>
         </ul>
         <div class="portfolio-photos-block">
           <img src="assets/images/portfolio/image1.png" class="portfolio-photo web" alt="image1">
@@ -94,11 +93,10 @@
           <img src="assets/images/portfolio/image10.png" class="portfolio-photo web art graphic" alt="image10">
           <img src="assets/images/portfolio/image11.png" class="portfolio-photo graphic art" alt="image11">
           <img src="assets/images/portfolio/image12.png" class="portfolio-photo web art" alt="image12">
-          <img src="assets/images/portfolio/image12.png" class="portfolio-photo web" alt="image13">
         </div>
       </div>
 
-      <div class="about">
+      <div class="about" id="about">
         <div class="about-title">About Us</div>
         <div class="about-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
         <div class="about-team-block">
@@ -140,14 +138,14 @@
         </div>
       </div>
 
-      <div class="quote">
+      <div class="quote" id="contact">
         <div class="quote-title">Get a Quote</div>
         <div class="quote-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
         <form class="quote-form" method="POST">
           <input type="text" name="name" id="name" placeholder="Name (Required)" required>
           <input type="email" name="email" id="email" placeholder="Email (Required)" required>
           <input type="text" name="subject" id="subject" placeholder="Subject">
-          <textarea name="description" id="project-description" cols="30" rows="10" style="resize: none;">Describe your project in detail...</textarea>
+          <textarea name="description" id="project-description" cols="30" rows="10" style="resize: none;" placeholder="Describe your project in detail..."></textarea>
 
           <input type="submit" value="Submit">
         </form>
@@ -172,28 +170,7 @@
       </div>
     </footer>
 
-    <script>
-      filterSelection("all");
-
-      function filterSelection(c) {
-        let x = document.getElementsByClassName('portfolio-photo');
-        if (c === 'all') c = '';
-        for (let i = 0; i < x.length; i++) {
-          x[i].classList.remove('show');
-          if (x[i].className.indexOf(c) > -1) x[i].classList.add('show');
-        }
-      }
-
-      let filter = document.querySelector('.portfolio-filter');
-      let buttons = filter.querySelectorAll('.portfolio-filter-item');
-      buttons.forEach(element => {
-        element.addEventListener('click', function() {
-          let current = document.querySelector('.active');
-          current.classList.remove('active');
-          this.classList.add('active');
-        });
-      });
-    </script>
+    <script src="script.js"></script>
 
   </div>
 </body>
